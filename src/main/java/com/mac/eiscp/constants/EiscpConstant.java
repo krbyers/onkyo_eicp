@@ -29,7 +29,7 @@ public class EiscpConstant {
     static {
         InetAddress defaultAddr = null;
         try {
-            defaultAddr = InetAddress.getByName("192.168.11.120");
+            defaultAddr = InetAddress.getByName("192.168.1.101");
         } catch (UnknownHostException ex) {
             Logger.getLogger(EiscpSocket.class.getName()).log(Level.SEVERE, null, ex);
         }

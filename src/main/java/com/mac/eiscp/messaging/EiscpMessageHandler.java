@@ -43,7 +43,8 @@ public class EiscpMessageHandler implements MessageListener {
     private Device workingDevice;
 
     private EiscpSocketReaderThread readerThread;
-    private Thread eiscpSocketReaderThreadThread;
+    private Thread
+            eiscpSocketReaderThreadThread;
 
     private EiscpSocket socket;
 

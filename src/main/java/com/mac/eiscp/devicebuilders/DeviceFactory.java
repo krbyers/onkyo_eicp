@@ -5,13 +5,11 @@
  */
 package com.mac.eiscp.devicebuilders;
 
+import com.mac.eiscp.interfaces.Command;
 import com.mac.eiscp.interfaces.Device;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
+
 import org.springframework.stereotype.Component;
 
 /**
@@ -89,21 +87,21 @@ public class DeviceFactory {
         return null;
     }
 
-//    public static void main(String[] args) throws IOException {
-//        DeviceFactory df = new DeviceFactory();
-//
-//        Device device = df.getDevice("TX-NR626");
-//
-//        Map<Command, Boolean> pwrGroup = device.getCommandGroup("SWL");
-//
-//        Set<Entry<Command, Boolean>> entries = pwrGroup.entrySet();
-//
-//        entries.stream().filter((entry) -> (entry.getKey().hasRange()))
-//                .forEach((entry) -> {
-//                    for (int i = 0; i < 20; i++) {
-//                        Command cmd = entry.getKey();
-//                        cmd.getParameter().getRange().increase();
-//                    }
-//                });
-//    }
+    public static void main(String[] args) throws IOException {
+        DeviceFactory df = new DeviceFactory();
+
+        Device device = df.getDevice("TX-NR626");
+
+        Map<Command, Boolean> pwrGroup = device.getCommandGroup("SWL");
+
+        Set<Map.Entry<Command, Boolean>> entries = pwrGroup.entrySet();
+
+        entries.stream().filter((entry) -> (entry.getKey().hasRange()))
+                .forEach((entry) -> {
+                    for (int i = 0; i < 20; i++) {
+                        Command cmd = entry.getKey();
+                        cmd.getParameter().getRange().increase();
+                    }
+                });
+    }
 }

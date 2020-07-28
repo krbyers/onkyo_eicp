@@ -438,8 +438,8 @@ public class CommandMapBuilder {
         return isDeviceRow;
     }
 
-//    public static void main(String[] args) throws IOException {
-//        CommandMapBuilder cmb = new CommandMapBuilder();
-//        cmb.buildDeviceSet();
-//    }
+    public static void main(String[] args) throws IOException {
+        CommandMapBuilder cmb = new CommandMapBuilder();
+        cmb.buildDeviceSet();
+    }
 }
